@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pglib"
+version = "0.0.1a0"
+description = 'PyPGLib: A Python Package for Easy Access to PGLib Power Grid Lib Benchmark'
+readme = "README.md"
+requires-python = ">=3.7.1"
+keywords = []
+authors = [
+  {name = "Muhammad Yasirroni", email = "muhammadyasirroni@gmail.com"},
+]
+maintainers = [
+  {name = "Muhammad Yasirroni", email = "muhammadyasirroni@gmail.com"}
+]
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.2.0",
+  "pytest-xdist>=3.1.0",
+  "pre-commit>=2.21.0",
+  "autopep8>=2.0.1",
+  "ruff>=0.0.254",
+]
+
+[project.urls]
+Documentation = "https://github.com/yasirroni/pglib#readme"
+Issues = "https://github.com/yasirroni/pglib/issues"
+Source = "https://github.com/yasirroni/pglib"
+
+[tool.setuptools]
+packages = ["pglib"]
+
+[tool.autopep8]
+in-place = true
+recursive = true
+verbose = true
+max_line_length = 88
+ignore = [
+]
+aggressive = 10
+
+[tool.ruff]
+fix = true
+line-length = 88
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "B90",  # support <3.10
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".git", "__pycache__", ".ipynb_checkpoints"]
+
+[tool.coverage.run]
+source = ["tests"]
+
+[coverage.paths]
+source = "pglib"
+
+[coverage.run]
+branch = true
+
+[coverage.report]
+show_missing = true
