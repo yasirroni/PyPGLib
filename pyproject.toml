@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pglib"
-version = "0.0.1a0"
-description = 'PyPGLib: A Python Package for Easy Access to PGLib Power Grid Lib Benchmark'
+version = "0.0.1a1"
+description = 'PyPGLib: A Python Package for Easy Access to Power Grid Lib Benchmark'
 readme = "README.md"
 requires-python = ">=3.7.1"
 keywords = []
@@ -37,9 +37,9 @@ dev = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/yasirroni/pglib#readme"
-Issues = "https://github.com/yasirroni/pglib/issues"
-Source = "https://github.com/yasirroni/pglib"
+Documentation = "https://github.com/yasirroni/PyPGLib#readme"
+Issues = "https://github.com/yasirroni/PyPGLib/issues"
+Source = "https://github.com/yasirroni/PyPGLib"
 
 [tool.setuptools]
 packages = ["pglib"]
