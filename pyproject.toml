@@ -67,6 +67,8 @@ select = [
 ignore = [
     "B90",  # support <3.10
 ]
+exclude = ["pypglib/uc/uc_model.py",]
+
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
