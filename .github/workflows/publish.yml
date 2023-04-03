@@ -38,10 +38,10 @@ jobs:
           mv temps/pglib-uc-19.08 pypglib/uc
 
           curl -L https://github.com/power-grid-lib/pglib-opf-hvdc/archive/refs/tags/v19.08.zip > pglib-opf-hvdc.zip
-          unzip pglib-opf-hvdc.zip -d temps
+          unzip pglib-opf-hvdc.zip -d tempss
           mv temps/pglib-opf-hvdc-19.08 pypglib/hvdc
 
-          cp -R scripts/ pypglib/
+          cp scripts/__init__.py pypglib/__init__.py
 
       - name: Install requirements
         run: |
