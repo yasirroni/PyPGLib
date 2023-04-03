@@ -37,6 +37,11 @@ TODO:
     1. Powershell command for curl and tar
  -->
 
+## Copy python scripts
+
+```powershell
+xcopy /y /s scripts\*.* pypglib\
+```
 
 ## Delete dist
 

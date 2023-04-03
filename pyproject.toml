@@ -74,6 +74,7 @@ norecursedirs = ["hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".g
 
 [tool.coverage.run]
 source = ["tests"]
+omit = ["pypglib/uc/uc_model.py"]
 
 [coverage.paths]
 source = "pypglib"
