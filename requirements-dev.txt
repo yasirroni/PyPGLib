@@ -1,6 +1,3 @@
-matpower
-oct2py
-
 pytest
 pytest-cov
 pytest-xdist
