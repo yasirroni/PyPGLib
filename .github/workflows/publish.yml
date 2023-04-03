@@ -25,6 +25,9 @@ jobs:
       - name: Download PGLib
         run: |
           rm -r pypglib
+          mkdir -p pypglib/opf
+          mkdir -p pypglib/uc
+          mkdir -p pypglib/hvdc
 
           curl -L https://github.com/power-grid-lib/pglib-opf/archive/refs/tags/v21.07.zip > pglib-opf.zip
           unzip pglib-opf.zip -d temps
