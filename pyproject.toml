@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pypglib"
-version = "0.0.1a2"
+version = "0.0.1a3"
 description = 'PyPGLib: A Python Package for Easy Access to Power Grid Lib Benchmark'
 readme = "README.md"
 requires-python = ">=3.7.1"
