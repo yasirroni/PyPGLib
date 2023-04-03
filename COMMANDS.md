@@ -10,7 +10,7 @@ Place to save some commands related to PyPGLib development, deployment, and main
 curl -L https://github.com/power-grid-lib/pglib-opf/archive/refs/tags/v21.07.zip > pglib-opf.zip
 tar -xf pglib-opf.zip
 ren pglib-opf-21.07 opf
-move opf pglib
+move opf pypglib
 move pglib-opf.zip backup
 ```
 
@@ -18,7 +18,7 @@ move pglib-opf.zip backup
 curl -L https://github.com/power-grid-lib/pglib-uc/archive/refs/tags/v19.08.zip > pglib-uc.zip
 tar -xf pglib-uc.zip
 ren pglib-uc-19.08 uc
-move uc pglib
+move uc pypglib
 move pglib-uc.zip backup
 ```
 
@@ -26,7 +26,7 @@ move pglib-uc.zip backup
 curl -L https://github.com/power-grid-lib/pglib-opf-hvdc/archive/refs/tags/v19.08.zip > pglib-opf-hvdc.zip
 tar -xf pglib-opf-hvdc.zip
 ren pglib-opf-hvdc-19.08 hvdc
-move hvdc pglib
+move hvdc pypglib
 move pglib-opf-hvdc.zip backup
 ```
 
@@ -44,7 +44,7 @@ Delete old dist if exist to avoid the unexpected.
 
 ```powershell
 del dist -Recurse -Force
-del pglib.egg-info -Recurse -Force
+del pypglib.egg-info -Recurse -Force
 ```
 
 ## Tags

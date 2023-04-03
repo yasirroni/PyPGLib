@@ -2,16 +2,16 @@ import os
 
 
 '''
-pytest -rA -c pyproject.toml --cov-report term-missing --cov=pglib
-pytest -n auto -rA -c pyproject.toml --cov-report term-missing --cov=pglib
+pytest -rA -c pyproject.toml --cov-report term-missing --cov=pypglib
+pytest -n auto -rA -c pyproject.toml --cov-report term-missing --cov=pypglib
 '''
 
 def test_import_contains_data():
-    import pglib
+    import pypglib
 
 
-    print(pglib.__file__)
-    pglib_path = os.path.abspath(os.path.dirname(pglib.__file__))
+    print(pypglib.__file__)
+    pglib_path = os.path.abspath(os.path.dirname(pypglib.__file__))
 
     assert os.path.isdir(os.path.join(pglib_path, "opf"))
     assert os.path.isdir(os.path.join(pglib_path, "uc"))

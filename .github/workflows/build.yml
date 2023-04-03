@@ -48,4 +48,4 @@ jobs:
 
       - name: Test package
         run: |
-          pytest -n auto -rA -c pyproject.toml --cov-report term-missing --cov=pglib
+          pytest -n auto -rA -c pyproject.toml --cov-report term-missing --cov=pypglib

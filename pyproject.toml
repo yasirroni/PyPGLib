@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pglib"
+name = "pypglib"
 version = "0.0.1a1"
 description = 'PyPGLib: A Python Package for Easy Access to Power Grid Lib Benchmark'
 readme = "README.md"
@@ -42,7 +42,7 @@ Issues = "https://github.com/yasirroni/PyPGLib/issues"
 Source = "https://github.com/yasirroni/PyPGLib"
 
 [tool.setuptools]
-packages = ["pglib"]
+packages = ["pypglib"]
 
 [tool.autopep8]
 in-place = true
@@ -76,7 +76,7 @@ norecursedirs = ["hooks", "*.egg", ".eggs", "dist", "build", "docs", ".tox", ".g
 source = ["tests"]
 
 [coverage.paths]
-source = "pglib"
+source = "pypglib"
 
 [coverage.run]
 branch = true

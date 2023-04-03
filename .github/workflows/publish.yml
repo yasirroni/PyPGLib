@@ -1,0 +1,104 @@
+name: publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone this repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: 'requirements-dev.txt'
+
+      - name: Download PGLib
+        run: |
+          mv pypglib/__init__.py __init__.py
+          rm -r pypglib
+
+          curl -L https://github.com/power-grid-lib/pglib-opf/archive/refs/tags/v21.07.zip > pglib-opf.zip
+          unzip pglib-opf.zip -d temps
+          mv temps/pglib-opf-21.07 pypglib/opf
+
+          curl -L https://github.com/power-grid-lib/pglib-uc/archive/refs/tags/v19.08.zip > pglib-uc.zip
+          unzip pglib-uc.zip -d temps
+          mv temps/pglib-uc-19.08 pypglib/uc
+
+          curl -L https://github.com/power-grid-lib/pglib-opf-hvdc/archive/refs/tags/v19.08.zip > pglib-opf-hvdc.zip
+          unzip pglib-opf-hvdc.zip -d temps
+          mv temps/pglib-opf-hvdc-19.08 pypglib/hvdc
+
+          mv __init__.py pypglib/__init__.py
+
+      - name: Install requirements
+        run: |
+          pip install -r requirements-dev.txt
+
+      - name: Install package
+        run: |
+          pip install -e .
+
+      - name: Test package
+        run: |
+          pytest -n auto -rA -c pyproject.toml --cov-report term-missing --cov=pypglib
+
+  deploy:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone this repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: 'pip'
+          cache-dependency-path: 'requirements-dev.txt'
+
+      - name: Download PGLib
+        run: |
+          mv pypglib/__init__.py __init__.py
+          rm -r pypglib
+
+          curl -L https://github.com/power-grid-lib/pglib-opf/archive/refs/tags/v21.07.zip > pglib-opf.zip
+          unzip pglib-opf.zip -d temps
+          mv temps/pglib-opf-21.07 pypglib/opf
+
+          curl -L https://github.com/power-grid-lib/pglib-uc/archive/refs/tags/v19.08.zip > pglib-uc.zip
+          unzip pglib-uc.zip -d temps
+          mv temps/pglib-uc-19.08 pypglib/uc
+
+          curl -L https://github.com/power-grid-lib/pglib-opf-hvdc/archive/refs/tags/v19.08.zip > pglib-opf-hvdc.zip
+          unzip pglib-opf-hvdc.zip -d temps
+          mv temps/pglib-opf-hvdc-19.08 pypglib/hvdc
+
+          mv __init__.py pypglib/__init__.py
+
+      - name: Install build dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: Build package
+        run: |
+          python -m build
+
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
