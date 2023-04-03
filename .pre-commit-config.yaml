@@ -6,9 +6,12 @@ repos:
     rev: v2.0.2
     hooks:
       - id: autopep8
+        exclude: pypglib/uc/uc_model.py
 
   # checkstyle using ruff
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: 'v0.0.254'
     hooks:
       - id: ruff
+        exclude: pypglib/uc/uc_model.py
+
