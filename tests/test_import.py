@@ -4,10 +4,10 @@ import pytest
 
 import pypglib
 
-'''
+"""
 pytest -rA -c pyproject.toml --cov-report term-missing --cov=pypglib
 pytest -n auto -rA -c pyproject.toml --cov-report term-missing --cov=pypglib
-'''
+"""
 
 
 def test_import_contains_data():
@@ -25,6 +25,7 @@ def test_import_case():
         pglib_opf_case14_ieee__api,
         pglib_opf_case14_ieee__sad,
     )
+
     assert pglib_opf_case14_ieee.endswith("pglib_opf_case14_ieee.m")
     assert pglib_opf_case14_ieee__sad.endswith("pglib_opf_case14_ieee__sad.m")
     assert pglib_opf_case14_ieee__api.endswith("pglib_opf_case14_ieee__api.m")

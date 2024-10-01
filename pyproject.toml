@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pypglib"
-version = "0.0.1"
+version = "0.0.2"
 description = 'PyPGLib: A Python Package for Easy Access to Power Grid Lib Benchmark'
 readme = "README.md"
 requires-python = ">=3.7.1"
@@ -32,8 +32,7 @@ dev = [
   "pytest>=7.2.0",
   "pytest-xdist>=3.1.0",
   "pre-commit>=2.21.0",
-  "autopep8>=2.0.1",
-  "ruff>=0.0.254",
+  "ruff>=0.6.8",
 ]
 
 [project.urls]
@@ -43,15 +42,6 @@ Source = "https://github.com/yasirroni/PyPGLib"
 
 [tool.setuptools]
 packages = ["pypglib"]
-
-[tool.autopep8]
-in-place = true
-recursive = true
-verbose = true
-max_line_length = 88
-ignore = [
-]
-aggressive = 10
 
 [tool.ruff]
 fix = true
@@ -67,7 +57,11 @@ select = [
 ignore = [
     "B90",  # support <3.10
 ]
-exclude = ["pypglib/uc/uc_model.py",]
+exclude = [
+    "pypglib/hvdc/*.py",
+    "pypglib/opf/*.py",
+    "pypglib/uc/*.py",
+]
 
 
 [tool.pytest.ini_options]

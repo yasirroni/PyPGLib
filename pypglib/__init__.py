@@ -6,9 +6,9 @@ PATH_PYPGLIB = os.path.dirname(os.path.abspath(__file__))
 def __getattr__(filename):
     """Automatically creates a string to case path."""
 
-    # eplace extension
-    root, ext = os.path.splitext(filename)
-    filename = root + '.m'
+    # replace extension
+    root, _ = os.path.splitext(filename)
+    filename = root + ".m"
 
     for root, _, files in os.walk(PATH_PYPGLIB):
         for name in files:

@@ -1,17 +1,30 @@
 default_stages: [commit]
 
 repos:
-  # autofix using autopep8
-  - repo: https://github.com/pre-commit/mirrors-autopep8
-    rev: v2.0.2
+  # check yaml and end of file fixer
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
     hooks:
-      - id: autopep8
-        exclude: pypglib/uc/uc_model.py
+      - id: check-yaml
+      - id: end-of-file-fixer
+        exclude: |
+          (?x)^(
+            LICENSE$|
+            pypglib/hvdc/.*|
+            pypglib/opf/.*|
+            pypglib/uc/.*
+          )$
 
-  # checkstyle using ruff
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: 'v0.0.254'
+  # autofix using ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.5.0
     hooks:
+      # Run the linter.
       - id: ruff
-        exclude: pypglib/uc/uc_model.py
-
+        types_or: [ python, pyi, jupyter ]
+        args: [ --fix ]
+      # Run the formatter.
+      - id: ruff-format
+        types_or: [ python, pyi, jupyter ]
+        # args: [ --verbose ]
