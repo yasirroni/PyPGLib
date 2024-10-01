@@ -29,6 +29,20 @@ m = start_instance()
 m.runpf(pglib_opf_case14_ieee)
 ```
 
+To loop to all test files:
+
+```python
+import glob
+import os
+
+from pypglib import PATH_PYPGLIB
+
+
+opf_dir = os.path.join(PATH_PYPGLIB, "opf")
+for file_path in glob.glob(os.path.join(opf_dir, "**", "*.m"), recursive=True):
+    print(file_path)
+```
+
 <!-- Combined with [`PyOPF`](https://github.com/seonho-park/PyOPF):
 
 ```python
