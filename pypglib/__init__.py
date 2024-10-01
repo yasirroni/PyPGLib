@@ -3,6 +3,9 @@ import os
 PATH_PYPGLIB = os.path.dirname(os.path.abspath(__file__))
 
 
+__version__ = "0.0.3"
+
+
 def __getattr__(filename):
     """Automatically creates a string to case path."""
 
