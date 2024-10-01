@@ -62,3 +62,15 @@ def test_get_case():
 
     # hvdc
     assert pypglib.case5_3_he.endswith("case5_3_he.m")
+
+
+def test_versions():
+    from pypglib import (
+        __VERSION_PYPGLIB_HVDC__,
+        __VERSION_PYPGLIB_OPF__,
+        __VERSION_PYPGLIB_UC__,
+    )
+
+    assert len(__VERSION_PYPGLIB_HVDC__) > 0
+    assert len(__VERSION_PYPGLIB_OPF__) > 0
+    assert len(__VERSION_PYPGLIB_UC__) > 0
