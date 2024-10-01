@@ -1,5 +1,7 @@
 # PyPGLib
 
+[![PyPI version](https://badge.fury.io/py/pypglib.svg)](https://pypi.org/project/pypglib/)
+
 PyPGLib: A Python Package for Easy Access to Power Grid Lib Benchmark
 
 Current Version: v0.0.2 (1 October 2024)
