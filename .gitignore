@@ -2,11 +2,14 @@
 backup/
 temps/
 *.zip
+bench/opf/pglib_opf_case*.csv
+bench/opf/pglib_opf_case*.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+octave-workspace
 
 # C extensions
 *.so
@@ -132,3 +135,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# mac
+.DS_Store
