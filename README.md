@@ -4,7 +4,7 @@
 
 PyPGLib: A Python Package for Easy Access to Power Grid Lib Benchmark
 
-Current Version: v0.0.2 (1 October 2024)
+Latest update: 2 October 2024
 
 | Original Repository                                                   | Version in This Package                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
@@ -43,6 +43,23 @@ from pypglib import PATH_PYPGLIB
 opf_dir = os.path.join(PATH_PYPGLIB, "opf")
 for file_path in glob.glob(os.path.join(opf_dir, "**", "*.m"), recursive=True):
     print(file_path)
+```
+
+To print all the case versions
+
+```python
+from pypglib import (
+    __VERSION_PYPGLIB_HVDC__,
+    __VERSION_PYPGLIB_OPF__,
+    __VERSION_PYPGLIB_UC__,
+    __version__,
+)
+
+
+print(__VERSION_PYPGLIB_HVDC__)
+print(__VERSION_PYPGLIB_OPF__)
+print(__VERSION_PYPGLIB_UC__)
+print(__version__)
 ```
 
 <!-- Combined with [`PyOPF`](https://github.com/seonho-park/PyOPF):
