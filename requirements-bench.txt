@@ -1,0 +1,7 @@
+matpower==8.0.0.2.1.8
+matpowercaseframes==1.0.11
+numpy==2.1.1
+pandas==2.2.3
+pyomo
+cvxpy==1.5.3
+oct2py==5.7.2

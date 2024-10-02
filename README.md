@@ -73,3 +73,22 @@ network = opf.parse_file(pglib_opf_case14_ieee)
 model.instantiate(network)
 result = model.solve(solver_option={'print_level' : 5, 'linear_solver': 'ma27'}, tee=True)
 ``` -->
+
+## Benchmark
+
+All benchmark inside `pypglib/` is done by the original author of `pglib`. Benchmark done by `nbs/bench_*.ipynb` are saved in the notebook itself or in `bench/`. All benchmark done based on package freeze on `requirements-bench.txt`.
+
+Benchmark in `bench/` is designed so that the data started as python dictionary. That is because I'm interested on the duration of powerflow in that particular scenario.
+
+To install packages in `requirements-bench.txt`:
+
+```shell
+pip install -r requirements.txt
+```
+
+To upgrade packages in `requirements-bench.txt` before restarting all benchmark:
+
+```shell
+pip install pru
+pru -r requirements.txt
+```
