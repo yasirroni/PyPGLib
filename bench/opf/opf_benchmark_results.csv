@@ -118,3 +118,17 @@ pglib_opf_case9591_goc__sad.m,Success,1167400.787717646,42.94589641599987
 pglib_opf_case4619_goc__sad.m,Infeasible,inf,14.504313916000228
 pglib_opf_case3012wp_k__sad.m,Success,2619455.618432605,16.524646791999658
 pglib_opf_case78484_epigrids__sad.m,Error,Err,inf
+pglib_opf_case20758_epigrids__sad.m,Infeasible,inf,46.93620325000006
+pglib_opf_case60_c__sad.m,Infeasible,inf,9.79191683299996
+pglib_opf_case57_ieee__sad.m,Success,38663.28279519179,9.791549499999974
+pglib_opf_case30_as__sad.m,Success,897.3511612166699,9.789248667000038
+pglib_opf_case13659_pegase__sad.m,Success,9042198.48876987,75.10683866700015
+pglib_opf_case4661_sdet__sad.m,Infeasible,inf,32.78524850000008
+pglib_opf_case3970_goc__sad.m,Success,965550.694829839,19.747909375000063
+pglib_opf_case4917_goc__sad.m,Success,3366686.6291157436,24.003475540999943
+pglib_opf_case6515_rte__sad.m,Error,Err,inf
+pglib_opf_case7336_epigrids__sad.m,Success,1888356.1582399267,34.082358041999896
+pglib_opf_case19402_goc__sad.m,Success,1983808.7660168884,101.4598430829999
+pglib_opf_case5658_epigrids__sad.m,Success,1235762.2549587884,29.331028125000103
+pglib_opf_case2746wp_k__sad.m,Success,1666935.1622574884,14.05541545799997
+pglib_opf_case20758_epigrids__api.m,Error,Err,inf
