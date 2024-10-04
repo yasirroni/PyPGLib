@@ -1,4 +1,4 @@
-file_name,matpower-pip_status,matpower-pip_cost,matpower-pip_python_time_perf
+file_name,matpower-pip_acopf_status,matpower-pip_acopf_cost,matpower-pip_acopf_python_time_perf
 pglib_opf_case4837_goc.m,Success,872255.322502515,23.271483500000613
 pglib_opf_case2746wop_k.m,Success,1208258.5027184617,14.20106266699986
 pglib_opf_case4601_goc.m,Success,826241.5573465228,18.952148374999524
